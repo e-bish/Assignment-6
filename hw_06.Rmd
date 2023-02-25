@@ -2,7 +2,7 @@
 title: "My Report for Assignment 6"
 author: "Emily Bishop"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-output: html_document
+output: pdf_document
 documentclass: report
 toc: true
 toc_depth: 3
@@ -14,9 +14,26 @@ geometry:
 - left=1in
 - right=1in
 header-includes:
-  - \usepackage{lineno}
-  - \linenumbers
+- \usepackage{fancyhdr}
+bibliography: "refs.bib"
+csl: "ecology.csl"
 ---
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Bishop}
+\fancyhead[RO,RE]{Assignment 6}
+\fancyfoot[CE,CO]{\thepage}
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE, echo=FALSE}
+## load the package
+library("knitcitations")
+
+## clear out any cached refs
+cleanbib()
+
+## set pandoc for formatting
+options("citation_format" = "pandoc")
+```
 
 # Abstract
 
@@ -52,9 +69,9 @@ Integer facilisis magnis et finibus parturient hendrerit ac, est, sit. Massa, ac
 
 Nisi sagittis. Pulvinar vel eu in maecenas vitae non, dolor. At integer arcu bibendum potenti nunc vestibulum taciti in sed platea. Quis praesent sapien id placerat maecenas eget, non. Sed ultricies nulla taciti lacinia dis sagittis imperdiet tellus, sed laoreet, semper. 
 
-\begin{equation}
-  <insert equation 1 here>
-\end{equation}
+$$
+\text{cor}(y_{t},x_{t-h})
+$$
 
 Class pulvinar quis dolor et neque. Tempus primis sed, urna, egestas. Massa laoreet feugiat mauris dignissim aliquam luctus.
 
@@ -63,8 +80,8 @@ Class pulvinar quis dolor et neque. Tempus primis sed, urna, egestas. Massa laor
 Vel finibus eu ut litora a etiam quam sit tempus class. Congue sit tempor felis. Nec augue egestas, et neque tempor odio ante, luctus eros eu curabitur. Parturient, litora amet sed euismod tristique duis non leo. Vitae non nibh, vestibulum montes. Dis potenti pharetra eleifend non convallis turpis mollis cursus? In maecenas ornare viverra arcu conubia ridiculus pretium malesuada. Scelerisque, mi ut nisi magna taciti phasellus est metus sit malesuada sodales aliquam a. Nascetur vivamus aptent sit vitae at venenatis tincidunt semper. 
 
 \begin{gather}
-  <insert equations 2 here> \\
-  <insert equations 3 here> 
+y_{t} = a + b x_{t-1} + e_{t} \\
+e_{t} \sim \text{N}(0, \sigma^2)
 \end{gather}
 
 Neque a quis primis in, sapien a, montes condimentum parturient. Volutpat vel, nisl fames erat nisl varius eleifend elementum ac. Nec luctus ut vulputate nullam et mauris. In fermentum praesent vestibulum proin molestie elementum. In eros gravida felis donec ut egestas torquent turpis orci in.
@@ -73,9 +90,9 @@ Neque a quis primis in, sapien a, montes condimentum parturient. Volutpat vel, n
 
 Ipsum malesuada odio nulla varius ut erat. Fermentum nam per ullamcorper tempus ac. Pellentesque, aliquam, diam morbi in, in nisi. Non, maximus sed in aliquam, elementum quis tincidunt. Leo eget consequat dapibus proin augue sollicitudin. Sodales porta nec morbi congue enim. Eget auctor sed, leo venenatis. In est tincidunt nullam. Pellentesque, auctor nulla efficitur tristique blandit. 
 
-\begin{equation}
-  <insert equation 4 here>
-\end{equation}
+$$
+\text{AIC} = \text{2NLL} + 2p
+$$
 
 Quam faucibus mattis tempus, eleifend sed a nisl mi nunc vivamus. Augue suspendisse sed auctor eu tempor justo maecenas vestibulum habitant maecenas sed. In sed, sed augue, ligula euismod, ad congue ad velit in, tincidunt. Dictum nec turpis sed senectus, non, donec potenti magna in conubia blandit. Congue sed pulvinar sed ligula ultrices malesuada ultrices id venenatis, vestibulum sed.
 
@@ -107,11 +124,11 @@ Sed pulvinar lobortis sapien lacus porttitor. At nisl orci, molestie elementum. 
 
 # Discusssion
 
-Molestie erat himenaeos purus, sit. In mollis cursus velit, cursus fames leo cursus vel, nisl rhoncus blandit. Tempus iaculis sed nec faucibus aliquet nisl sed pretium posuere. Ut felis euismod, dapibus, mattis metus cras ullamcorper odio. Gravida sapien, vulputate sit orci turpis nulla. Metus suspendisse platea lectus dolor adipiscing venenatis tortor? Morbi vestibulum enim phasellus et ornare lobortis nostra quam cum, ullamcorper. Sodales, ut, lorem justo facilisi nostra in `<add citation "(Broman & Woo 2018)" here; DOI is 10.1080/00031305.2017.1375989>`.
+Molestie erat himenaeos purus, sit. In mollis cursus velit, cursus fames leo cursus vel, nisl rhoncus blandit. Tempus iaculis sed nec faucibus aliquet nisl sed pretium posuere. Ut felis euismod, dapibus, mattis metus cras ullamcorper odio. Gravida sapien, vulputate sit orci turpis nulla. Metus suspendisse platea lectus dolor adipiscing venenatis tortor? Morbi vestibulum enim phasellus et ornare lobortis nostra quam cum, ullamcorper. Sodales, ut, lorem justo facilisi nostra in `r citep("10.1080/00031305.2017.1375989")`.
 
 Ipsum malesuada odio nulla varius ut erat. Fermentum nam per ullamcorper tempus ac. Pellentesque, aliquam, diam morbi in, in nisi. Non, maximus sed in aliquam, elementum quis tincidunt. Leo eget consequat dapibus proin augue sollicitudin. Sodales porta nec morbi congue enim. Eget auctor sed, leo venenatis. In est tincidunt nullam. Pellentesque, auctor nulla efficitur tristique blandit. Quam faucibus mattis tempus, eleifend sed a nisl mi nunc vivamus. Augue suspendisse sed auctor eu tempor justo maecenas vestibulum habitant maecenas sed. In sed, sed augue, ligula euismod, ad congue ad velit in, tincidunt. Dictum nec turpis sed senectus, non, donec potenti magna in conubia blandit. Congue sed pulvinar sed ligula ultrices malesuada ultrices id venenatis, vestibulum sed.
 
-Purus, ac at pellentesque sem cum fusce platea. Nec purus tempus integer sociosqu mi erat felis hac turpis. Rhoncus tristique eu. Diam himenaeos montes ut, cursus feugiat, eget eget ac. Dignissim sit egestas, nec praesent nec eleifend in viverra et quis faucibus, felis ut. Tincidunt quis proin dolor lacinia ut duis leo. Elit sed, non velit vitae tortor `<add citation "(Marwick et al. 2018)" here; URL is https://peerj.com/preprints/3192v2>`.
+Purus, ac at pellentesque sem cum fusce platea. Nec purus tempus integer sociosqu mi erat felis hac turpis. Rhoncus tristique eu. Diam himenaeos montes ut, cursus feugiat, eget eget ac. Dignissim sit egestas, nec praesent nec eleifend in viverra et quis faucibus, felis ut. Tincidunt quis proin dolor lacinia ut duis leo. Elit sed, non velit vitae tortor `r citep("10.1111/j.1461-0248.2006.00924.x")`. 
 
 Tristique, at et tempus, pellentesque conubia et nisl etiam orci nam. Dictum ipsum volutpat eget nunc! A orci eget scelerisque, laoreet. Nec faucibus urna lacus in bibendum. Dolor nam ultricies et ut mi duis nec. Vivamus odio quis sit magnis sed maecenas nibh fusce porttitor dignissim. Malesuada donec quis aliquam arcu blandit felis luctus integer. Quam sed purus ac neque sem lacinia ac, sed. Ac luctus phasellus justo tempor. Facilisi non. Hendrerit, ut augue, vel aliquam arcu et sed natoque in, ipsum fermentum. Et nostra quisque.
 
@@ -122,5 +139,7 @@ Viverra urna in arcu ut, bibendum, at. Eu placerat sociis mauris, elementum risu
 Maecenas molestie pellentesque felis mauris nisl viverra sapien, in inceptos imperdiet mi aliquam ultrices. Ante sit. Erat eget sed tempus curabitur viverra cum lacus? Tellus ac porttitor mi eleifend lacus lacinia duis ut dictumst. Leo nisi purus lobortis ullamcorper tempor in. Varius eu nulla, suspendisse eget, vel. Convallis hac. Faucibus praesent cum nisl vitae morbi ipsum neque. Sem in mi, primis fusce ac magna elementum sociosqu ante. Orci pellentesque donec amet sed sed libero magnis in malesuada odio vulputate elementum, sem. Sociis sed a porttitor blandit nec nec ridiculus sollicitudin? Dictumst facilisis nisi ac lobortis est montes dolor cum nec. Natoque, hendrerit adipiscing iaculis, lacinia risus purus, congue lorem. Pretium mus nam per tempus metus volutpat et habitant.
 
 # References
+```{r bibs, echo = FALSE, message=FALSE}
+write.bibtex(file = "refs.bib")
+```
 
-`<Insert automatically formatted bibliography here>`
