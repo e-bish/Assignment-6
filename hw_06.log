@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.24)  24 FEB 2023 18:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.24)  27 FEB 2023 08:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -641,11 +641,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] (./hw_06.aux) ) 
 Here is how much of TeX's memory you used:
- 13560 strings out of 478268
- 214430 string characters out of 5846347
+ 13562 strings out of 478268
+ 214448 string characters out of 5846347
  541054 words of memory out of 5000000
  31396 multiletter control sequences out of 15000+600000
- 523588 words of font info for 116 fonts, out of 8000000 for 9000
+ 523671 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,11n,77p,1002b,359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-math
@@ -661,10 +661,10 @@ live/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/t
 exmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fo
 nts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
 public/lm/lmsy8.pfb>
-Output written on hw_06.pdf (16 pages, 209182 bytes).
+Output written on hw_06.pdf (16 pages, 209156 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
+ 261 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
  52 named destinations out of 1000 (max. 500000)
  30843 words of extra memory for PDF output out of 35830 (max. 10000000)
 
